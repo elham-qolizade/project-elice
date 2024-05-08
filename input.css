@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply inline-block px-8 py-3 text-sm text-center text-white duration-200 ease-linear rounded-sm cursor-pointer bg-blue-950;
+    }
+
+    .second-btn {
+        @apply inline-block px-10 py-3 text-sm text-center text-gray-500 duration-200 ease-linear border border-black rounded-sm cursor-pointer;
+    }
+
+    .separator {
+        @apply top-0 bottom-0 w-2 h-20 bg-yellow-300;
+    }
+
+    .paragraph {
+        @apply text-xs leading-5 text-gray-600;
+    }
+
+    .logo-img {
+        @apply w-[109px] pt-[1%] pl-[1%];
+    }
+
+    .button {
+        @apply flex flex-row mr-[10px] w-[10%] pt-[5%];
+    }
+}
+
+
+@layer utilities {
+    .list {
+        margin: -2px -10px -2px -2px;
+        list-style-type: none;
+        padding-top: 2px;
+        float: left;
+        padding-left: 2px;
+        min-width: calc(100% + 12px);
+    }
+
+    .list li {
+        margin: 0;
+        float: left;
+
+        border: 2px solid #e7e7e7;
+        text-align: center;
+        height: 180px;
+        line-height: 180px;
+        position: relative;
+        margin-top: -2px;
+        margin-left: -2px;
+        overflow: hidden;
+    }
+
+    .swiper {
+        width: 100%;
+        background-color: rgb(247, 188, 206);
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+    .line_effect:after {
+        content: '';
+        width: 0;
+        height: 1.5px;
+        position: absolute;
+        left: auto;
+        right: 0;
+        bottom: 0px;
+        transition: width .6s cubic-bezier(.25, .8, .25, 1) 0s;
+        background: currentColor;
+    }
+
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+
+    .wrapper {
+        height: 700px;
+        max-width: 1200px;
+    }
+
+    /* The side navigation menu */
+    .sidenav {
+        height: 100%;
+        /* 100% Full-height */
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Stay on top */
+        top: 0;
+        /* Stay at the top */
+        left: 36%;
+        background-color: #111;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 60px;
+        /* Place content 60px from the top */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in the sidenav */
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    /* The sidenav */
+    .sidenav {
+        height: 100%;
+        width: 315px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        left: auto;
+        background-color: white;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    /* Page content */
+    .main {
+        margin-left: 200px;
+        /* Same as the width of the sidenav */
+    }
+
+    .sidenav {
+        right: 0;
+    }
+
+
+    .details .category a {
+        transition: all .3s ease;
+    }
+
+    .details .category a:hover {
+        color: yellow;
+    }
+
+    .line_effect {
+        display: inline-block;
+        position: relative;
+    }
+
+    .line_effect:after {
+        content: '';
+        width: 0;
+        height: 1.5px;
+        position: absolute;
+        left: auto;
+        right: 0;
+        bottom: 0px;
+        transition: width .6s cubic-bezier(.25, .8, .25, 1) 0s;
+        background: currentColor;
+    }
+
+    .wrapper i {
+        /* top: 50%; */
+        height: 44px;
+        width: 44px;
+        color: #343F4F;
+        cursor: pointer;
+        font-size: 1.15rem;
+        /* position: absolute; */
+        text-align: center;
+        line-height: 44px;
+        background: #fff;
+        border-radius: 50%;
+        /* transform: translateY(-50%); */
+        transition: transform 0.1s linear;
+    }
+
+
+
+    .wrapper i:active {
+        transform: translateY(-50%) scale(0.9);
+    }
+
+    .wrapper i:hover {
+        background: #f2f2f2;
+    }
+
+    .wrapper i:first-child {
+        left: -22px;
+        display: none;
+    }
+
+    .wrapper i:last-child {
+        right: -22px;
+    }
+
+    .wrapper .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        overflow: hidden;
+        scroll-snap-type: x mandatory;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .carousel.dragging {
+        cursor: grab;
+        scroll-behavior: auto;
+    }
+
+    .carousel.dragging .img {
+        pointer-events: none;
+    }
+
+    .carousel .img {
+        object-fit: cover;
+        user-select: none;
+        margin-left: 14px;
+        width: calc(80%);
+    }
+
+    .carousel .img:first-child {
+        margin-left: 0px;
+    }
+
+    .list_inner:hover:before {
+        transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+        transform: scale3d(3.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+    }
+
+    .list_inner:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.5);
+        content: '';
+        transition: 0.6s;
+        transition: transform 0.6s;
+        transform: scale3d(3.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+        transform: scale3d(3.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+    }
+
+    .title-elice {
+        position: relative;
+        font-style: italic;
+        font-size: 22px;
+        font-family: kristi;
+        line-height: 1;
+        color: rgba(19, 15, 73, .07);
+        display: block;
+    }
+
+    .back {
+        position: absolute;
+        top: 27%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        font-family: inter, sans-serif;
+        font-weight: 700;
+        font-size: 9px;
+        color: #130F49;
+        font-style: normal;
+        margin-top: 5px;
+    }
+
+    .card-list:hover {
+        transform: translateY(-5px);
+    }
+
+    img:hover {
+        transform: scale(1.1);
+        transition: all 0.5s
+    }
+
+
+    .details {
+        padding-top: 9%;
+        height: 126px;
+
+    }
+
+    .line_effect:hover:after {
+        width: 100%;
+        left: 0;
+        right: auto;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+        transition: margin-left .5s;
+        padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+}
